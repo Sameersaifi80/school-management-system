@@ -1,0 +1,55 @@
+{
+  "students": [
+    {
+      "Firstname": "Ajay",
+      "Lastname": "Kumar",
+      "Dob": "2001-10-12",
+      "gender": "Male",
+      "Email": "Ajay@gmail.com",
+      "Address": "F1 new delhi",
+      "City": "delhi",
+      "zip": "110096",
+      "number": "9746323536",
+      "id": "8XS8Vvw5UHQ"
+    },
+    {
+      "Firstname": "Ashish",
+      "Lastname": "Yadav",
+      "Dob": "2002-01-02",
+      "gender": "Male",
+      "Email": "Ashish@gmail.com",
+      "Address": "B-1 Noida up",
+      "City": "noida",
+      "zip": "202151",
+      "number": "9984588115",
+      "id": "CA8cMaCUapw"
+    }
+  ],
+  "Teachers": [
+    {
+      "Firstname": "Sameer",
+      "Lastname": "Saifi",
+      "date of birth": "2002-01-12",
+      "gender": "Male",
+      "Email": "sam77saifi@gmail.com",
+      "Address": "327, Street Number 2",
+      "City": "Delhi",
+      "zip": "110096",
+      "number": "9456915613",
+      "id": "NfuFFPDubZ0"
+    },
+    {
+      "Firstname": "Sameer",
+      "Lastname": "Saifi",
+      "date of birth": "2001-01-12",
+      "gender": "Male",
+      "Email": "sam77saifi@gmail.com",
+      "Address": "street no.5,Laxmi nagar",
+      "City": "Laxmi nagar",
+      "zip": "110092",
+      "number": "98458111651",
+      "id": "SXnwoAFSpMY"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
