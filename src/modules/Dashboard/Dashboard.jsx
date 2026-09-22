@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "motion/react";
 
 export default function Dashboard() {
   const cards = [
@@ -11,6 +12,11 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-[#f6f6ff] p-3 sm:p-6">
+
+      <motion.div initial={{ x: "100vw" }} animate={{ x: 0 }}
+      transition={{duration: 0.7,ease: "easeInOut"}}className="min-h-screen">
+      
+
       <div className="flex flex-col lg:flex-row gap-6">
         <div className="flex-1">
           <div className="flex flex-col sm:flex-row gap:3">
@@ -20,8 +26,8 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-6">
             {cards.map((card, index) => (
               <div
-                key={index}
-                className={`${card.color} rounded-2xl p-5`}
+              key={index}
+              className={`${card.color} rounded-2xl p-5`}
               >
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
                   {card.value}
@@ -75,12 +81,12 @@ export default function Dashboard() {
                 {["19", "20", "21", "22", "23", "24", "25"].map(
                   (day) => (
                     <div
-                      key={day}
-                      className={`p-2 rounded ${
-                        day === "22"
-                          ? "bg-sky-100"
-                          : ""
-                      }`}
+                    key={day}
+                    className={`p-2 rounded ${
+                      day === "22"
+                      ? "bg-sky-100"
+                      : ""
+                    }`}
                     >
                       {day}
                     </div>
@@ -122,6 +128,7 @@ export default function Dashboard() {
         </div>
 
       </div>
+                </motion.div>
     </div>
   );
 }

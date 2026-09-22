@@ -15,6 +15,7 @@ import Registration from './modules/Dashboard/Registration'
 import TeacherReg from './modules/Dashboard/TeacherReg'
 import Notice from './modules/Sidebarpages/Notice'
 import Studentd from './modules/Dashboard/Studentd'
+import ErrorPage from './modules/Dashboard/Errorpage'
 
 createRoot(document.getElementById('root')).render(
 <StrictMode>
@@ -37,6 +38,7 @@ createRoot(document.getElementById('root')).render(
               <Route path='teacherreg' element={<TeacherReg/>}></Route>
 
           </Route>
+          <Route path='*' element={<ErrorPage/>}></Route>
       </Routes>
     
     </BrowserRouter>

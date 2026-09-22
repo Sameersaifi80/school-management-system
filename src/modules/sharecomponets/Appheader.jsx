@@ -40,12 +40,12 @@ function Appheader() {
               </Link>
             </li>
             <li>
-              <Link to="" className="hover:text-yellow-300">
+              <Link to="*" className="hover:text-yellow-300">
                 Classes
               </Link>
             </li>
             <li>
-              <Link to="" className="hover:text-yellow-300">
+              <Link to="*" className="hover:text-yellow-300">
                 Reports
               </Link>
             </li>

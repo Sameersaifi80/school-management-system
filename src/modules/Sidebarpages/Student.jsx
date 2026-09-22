@@ -31,7 +31,7 @@ const userDelete = (d)=>{
         <div>
             <div className="flex justify-between items-center">
                 <h1>List of Students</h1>
-                <button className='bg-blue-500 rounded p-1'><Link to="adduser">Add User</Link></button>
+                <button className='bg-blue-500 rounded p-1'><Link to="registration">Add User</Link></button>
             </div>
             <div className="">
                 <div className="overflow-x-auto p-4 ">

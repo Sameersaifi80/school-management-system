@@ -12,64 +12,163 @@ export default function Registration() {
         })
    }
        
-    return (
-        <div className="min-h-screen flex justify-center items-center">
-            <form
-                className=" bg-slate-200 text-purple-800 p-20 rounded-lg flex-col items-center shadow-md w-[800px]">
-                <h2 className="text-3xl font-bold text-center mb-9">Registration Form</h2>
-                <div className=" flex gap-5 items-center">
-                <div className="">
-                    <label >First Name : </label>
-                    <input type="text" name="" className="border p-2 rounded"{...register("Firstname", {required:true})}/>
-                </div><br />
-                <div className="">
-                    <label htmlFor="">Last Name : </label>
-                    <input type="text" className="border p-2 rounded" {...register("Lastname" , {required:true})}/>
-                </div> </div><br />
-                <div className="flex items-center gap-4">
-                    <label >Date of birth :</label>
-                    <input type="date" className='border p-2 rounded' {...register("date of birth" ,{required:true})}/>
-                </div><br />
-                <div className="flex gap-5">
-                    <label htmlFor="">Gender :</label>
-                    <input type="radio" name='gender' value="Male" {...register("gender" , {required:true})}/>Male
-                    <input type="radio" name='gender' value="Female" {...register("gender" ,{required:true})} />Female
-                </div><br />
-                <div className="flex gap-8">
-                    <label>Email :</label>
-                    <input type="email" name="" id="" placeholder="Email" className="w-80 border p-2 rounded" {...register("Email" ,{required:true})} />
-                </div> <br />
-                <div className="flex gap-3">
-                    <label>Address :</label>
-                    <input type="text" className='w-80 h-20 border p-2 rounded' {...register("Address" ,{required:true})}/>
-                </div><br />
-                <div className="flex gap-10 items-center">
-                    <label>City :</label>
-                    <input type="text" className='border p-2 rounded' {...register("City" ,{required:true})} />
-                </div><br />
-                <div className="flex gap-8 items-center">
-                    <label>State : </label>
-                    <select {...register("State",{required:true})}
-                        className="w-[400px] border p-2 rounded" >
-                        <option value="">Choose a City</option>
-                        <option value="Delhi">Delhi</option>
-                        <option value="Mumbai">Mumbai</option>
-                        <option value="Noida">Uttar Pardesh</option>
-                        <option value="Gurgaon">Gurgaon</option>
-                        <option value="Jaipur">Jaipur</option>
-                    </select>
-                </div><br />
-                <div className="flex gap-3 items-center">
-                    <label>Zip Code :</label>
-                    <input type="number" className='border p-2 rounded' {...register("zip", {required:true})} />
-                </div><br />
-                <div className="flex gap-8 items-center">
-                    <label>phone : </label>
-                    <input type="number" className='border p-2 round'{...register("number" ,{required:true})} />
-                </div><br />
+  return (
+    <div className="min-h-screen flex justify-center items-center bg-gradient-to-r from-sky-400 via-indigo-400 to-purple-500 p-5">
+      <form
+        onSubmit={handleSubmit(submitdata)}
+        className="bg-white w-full max-w-4xl p-8 rounded-lg shadow-2xl"
+      >
+        <h2 className="text-3xl font-bold mb-8 border-b-2 border-purple-500 inline-block">
+          Registration
+        </h2>
 
-                <button type="submit" className="w-full bg-purple-700 text-white py-2 rounded hover:bg-purple-900" value="add" onClick={handleSubmit(submitdata)}>Register</button>
-            </form>
+        {/* First Name & Last Name */}
+        <div className="grid md:grid-cols-2 gap-6 mb-5">
+          <div>
+            <label className="block mb-2 font-medium">First Name</label>
+            <input
+              type="text"
+              placeholder="Enter your first name"
+              className="w-full border p-3 rounded-md"
+              {...register("Firstname", { required: true })}
+            />
+          </div>
+
+          <div>
+            <label className="block mb-2 font-medium">Last Name</label>
+            <input
+              type="text"
+              placeholder="Enter your last name"
+              className="w-full border p-3 rounded-md"
+              {...register("Lastname", { required: true })}
+            />
+          </div>
         </div>
-    )
+
+        {/* Email & Phone */}
+        <div className="grid md:grid-cols-2 gap-6 mb-5">
+          <div>
+            <label className="block mb-2 font-medium">Email</label>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="w-full border p-3 rounded-md"
+              {...register("Email", { required: true })}
+            />
+          </div>
+
+          <div>
+            <label className="block mb-2 font-medium">Phone Number</label>
+            <input
+              type="number"
+              placeholder="Enter your phone number"
+              className="w-full border p-3 rounded-md"
+              {...register("number", { required: true })}
+            />
+          </div>
+        </div>
+
+        {/* DOB & City */}
+        <div className="grid md:grid-cols-2 gap-6 mb-5">
+          <div>
+            <label className="block mb-2 font-medium">Date of Birth</label>
+            <input
+              type="date"
+              className="w-full border p-3 rounded-md"
+              {...register("dob", { required: true })}
+            />
+          </div>
+
+          <div>
+            <label className="block mb-2 font-medium">City</label>
+            <input
+              type="text"
+              placeholder="Enter your city"
+              className="w-full border p-3 rounded-md"
+              {...register("City", { required: true })}
+            />
+          </div>
+        </div>
+
+        {/* Gender */}
+        <div className="mb-6">
+          <h3 className="text-xl font-semibold mb-4">Gender</h3>
+
+          <div className="flex flex-wrap gap-8">
+            <label className="flex items-center gap-2">
+              <input
+                type="radio"
+                value="Male"
+                {...register("gender", { required: true })}
+              />
+              Male
+            </label>
+
+            <label className="flex items-center gap-2">
+              <input
+                type="radio"
+                value="Female"
+                {...register("gender", { required: true })}
+              />
+              Female
+            </label>
+
+            <label className="flex items-center gap-2">
+              <input
+                type="radio"
+                value="Other"
+                {...register("gender", { required: true })}
+              />
+              Prefer not to say
+            </label>
+          </div>
+        </div>
+
+        {/* Address */}
+        <div className="mb-5">
+          <label className="block mb-2 font-medium">Address</label>
+          <textarea
+            rows="3"
+            placeholder="Enter your address"
+            className="w-full border p-3 rounded-md"
+            {...register("Address", { required: true })}
+          ></textarea>
+        </div>
+
+        {/* State & Zip */}
+        <div className="grid md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <label className="block mb-2 font-medium">State</label>
+            <select
+              className="w-full border p-3 rounded-md"
+              {...register("State", { required: true })}
+            >
+              <option value="">Select State</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Rajasthan">Rajasthan</option>
+            </select>
+          </div>
+
+          <div>
+            <label className="block mb-2 font-medium">Zip Code</label>
+            <input
+              type="number"
+              placeholder="Enter zip code"
+              className="w-full border p-3 rounded-md"
+              {...register("zip", { required: true })}
+            />
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          className="w-full py-3 rounded-md text-white font-semibold text-lg bg-gradient-to-r from-sky-400 to-purple-500 hover:opacity-90 duration-300"
+        >
+          Register
+        </button>
+      </form>
+    </div>
+  );
 }
