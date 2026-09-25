@@ -13,8 +13,6 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-[#f6f6ff] p-3 sm:p-6">
 
-      <motion.div initial={{ x: "100vw" }} animate={{ x: 0 }}
-      transition={{duration: 0.7,ease: "easeInOut"}}className="min-h-screen">
       
 
       <div className="flex flex-col lg:flex-row gap-6">
@@ -128,7 +126,6 @@ export default function Dashboard() {
         </div>
 
       </div>
-                </motion.div>
     </div>
   );
 }
